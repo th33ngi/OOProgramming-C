@@ -1,5 +1,5 @@
 #include <iostream>
-using std::string;
+using namespace std;
 /*
 Object Oriented Programming Principles or Pillars
 1-Encapsulation -> Everything allow us Bundling of data.
@@ -64,22 +64,22 @@ public:
 
     //print employee information method
     void information() {
-        std::cout << "Name: " << Name << std::endl;
-        std::cout << "Company: " << Company << std::endl;
-        std::cout << "Age: " << Age << std::endl;
+        cout << "Name: " << Name << endl;
+        cout << "Company: " << Company << endl;
+        cout << "Age: " << Age << endl;
     }
 
     //ask for promotion method
     void AskForPromotion() {
         if (Age > 25)
-            std::cout << "Promotion: " << Name << " got promoted!" << std::endl;
+            cout << "Promotion: " << Name << " got promoted!" << endl;
         else
-            std::cout << "Message: " << Name << ", sorry NO promotion for you!" << std::endl;
+            cout << "Message: " << Name << ", sorry NO promotion for you!" << endl;
     }
 
     //Polymorphism
     virtual void work() {
-        std::cout << Name << " is checking email, task backlog, performing tasks..." << std::endl;
+        cout << Name << " is checking email, task backlog, performing tasks..." << endl;
     }
 };
 
@@ -96,12 +96,12 @@ public:
 
     //fixbug method
     void fixBug() {
-        std::cout << "Task: " << Name << " fixed bug using " << ProgramLanguage << std::endl;
+        cout << "Task: " << Name << " fixed bug using " << ProgramLanguage << endl;
     }
 
     //Polymorphism
     void work() {
-        std::cout << "Job: " << Name << " is writing " <<ProgramLanguage << " code" << std::endl;
+        cout << "Job: " << Name << " is writing " <<ProgramLanguage << " code" << endl;
     }
 
 };
@@ -117,12 +117,12 @@ public:
 
     //prepareLesson method
     void prepareLesson() {
-        std::cout << "Task: " << Name << " is preparing " << Subject << " lessons " << std::endl;
+        cout << "Task: " << Name << " prepared " << Subject << " lessons " << endl;
     }
 
     //Polymorphism
     void work() {
-        std::cout << "Job: " << Name << " is teaching " << Subject << std::endl;
+        cout << "Job: " << Name << " is teaching " << Subject << endl;
     }
 };
 
@@ -137,11 +137,13 @@ int main()
     Employee* e2 = &t; // e2 will have reference of teacher class
     //Call methods
     d.information();
-    e1->work(); // call developer work() method using poiter   
+    e1->work(); // call developer work() method using pointer   
     d.fixBug();
     d.AskForPromotion();
     t.information();
-    e2->work(); //call teacher work() method using poiter
+    e2->work(); //call teacher work() method using pointer
     t.prepareLesson();
     t.AskForPromotion();
-} 
+
+    system("pause");
+}
